@@ -7,22 +7,6 @@ from convert_contacts import create_users_for_find, list_search
 pyautogui.FAILSAFE = True
 pyautogui.PAUSE = 1
 
-# def paste(text: str):
-#     """ for Russian transcription """
-#     pyperclip.copy(text)
-#     press_and_release('ctrl + v')
-
-# def type(text: str, interval=0.0):
-#     """ for Russian transcription """
-#     buffer = pyperclip.paste()
-#     if not interval:
-#         paste(text)
-#     else:
-#         for char in text:
-#             paste(char)
-#             sleep(interval)
-#     pyperclip.copy(buffer)
-
 def clear_space():
     pyautogui.keyDown('ctrl')
     pyautogui.press('a')
@@ -42,7 +26,7 @@ def main():
     
     count = 0
     for name in list_search:
-        # type(name, interval=0.1)
+    
         keyboard.write(name)
         sleep(3)
         pyautogui.press('enter')
@@ -50,7 +34,6 @@ def main():
         pyautogui.press('enter')
 
         sleep(1)
-        # type(text_message, interval=0.1)
         keyboard.write(text_message)
         # pyautogui.press('enter')
         pyautogui.leftClick(pyautogui.locateCenterOnScreen('data/clear.PNG'))
